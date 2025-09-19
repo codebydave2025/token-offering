@@ -4,7 +4,6 @@ A modern, responsive ICO landing page built with React and TailwindCSS featuring
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://yourusername.github.io/decentralx-ico) *(Replace with your GitHub Pages URL)*
 
 ## ✨ Features
 
@@ -119,5 +118,6 @@ MIT License - feel free to use for your own projects!
 This project uses CDN links for React and TailwindCSS to keep it simple and deployable anywhere without build steps. Perfect for quick prototypes and GitHub Pages deployment.
 
 ---
+
 
 **Built with ❤️ for the decentralized future**
