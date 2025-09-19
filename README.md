@@ -2,9 +2,6 @@
 
 A modern, responsive ICO landing page built with React and TailwindCSS featuring a dark theme with glassmorphism effects.
 
-## 🚀 Live Demo
-
-
 ## ✨ Features
 
 - **Responsive Design** - Works perfectly on all devices
@@ -35,14 +32,13 @@ A modern, responsive ICO landing page built with React and TailwindCSS featuring
 
 ## 🚀 Quick Start
 
-### Online (GitHub Pages)
+### Online (codebydave2025.github.io/token-offering)
 Simply visit the live demo link above.
 
 ### Local Development
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/decentralx-ico.git
+   ```bash https://github.com/codebydave2025/token-offering.git
    cd decentralx-ico
    ```
 
@@ -121,3 +117,4 @@ This project uses CDN links for React and TailwindCSS to keep it simple and depl
 
 
 **Built with ❤️ for the decentralized future**
+
