@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DecentralX ICO - Join the DeFi token launch">
+  <meta property="og:title" content="DecentralX ICO">
+  <meta property="og:description" content="Join the DecentralX ICO and revolutionize DeFi with DXC Token">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=DecentralX+ICO">
+  <meta property="og:url" content="https://decentralx-ico.vercel.app">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DecentralX ICO - Launching DeFi">
+  <meta name="twitter:description" content="Join the DecentralX ICO and revolutionize DeFi with DXC Token">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630?text=DecentralX+ICO">
+  <title>DecentralX ICO - Launching DeFi</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzEwYjk4MSIvPgo8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJPcmJpdHJvbiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjgwMCI+RDwvdGV4dD4KPC9zdmc+Cg==">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CDN Libraries -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/viem@2.21.7/dist/umd/index.js"></script>
+  <script src="https://unpkg.com/@tanstack/react-query@5.59.13/build/umd/index.production.js"></script>
+  <script src="https://unpkg.com/wagmi@2.12.17/dist/umd/index.js"></script>
+  <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.min.js"></script>
+  
+  <!-- TailwindCSS Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'orbitron': ['Orbitron', 'monospace'],
+          },
+          colors: {
+            'crypto-green': '#065f46',
+            'crypto-emerald': '#059669',
+            'crypto-dark': '#0f1e13',
+            'crypto-gray': '#1a2e23',
+          },
+          animation: {
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'float': 'float 3s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'bounce-slow': 'bounce 2s ease-in-out infinite',
+            'slide-in': 'slideIn 0.8s ease-out',
+            'fade-in': 'fadeIn 1s ease-out',
+            'scale-in': 'scaleIn 0.6s ease-out',
+          },
+          keyframes: {
+            glow: {
+              '0%': { boxShadow: '0 0 5px #065f46, 0 0 10px #065f46' },
+              '100%': { boxShadow: '0 0 20px #065f46, 0 0 30px #065f46, 0 0 40px #065f46' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideIn: {
+              '0%': { transform: 'translateX(-100%)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' }
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.8)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0f1e13 0%, #1a2e23 50%, #22543d 100%);
+      min-height: 100vh;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1a2e23;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #065f46, #059669);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #064e3b, #047857);
+    }
+    
+    /* Glassmorphism effect */
+    .glass {
+      background: rgba(15, 30, 19, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #065f46, #059669);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Button hover effects */
+    .btn-primary {
+      background: linear-gradient(135deg, #065f46, #059669);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(6, 95, 70, 0.3);
+    }
+    
+    /* Navbar backdrop blur */
+    .navbar-blur {
+      background: rgba(15, 30, 19, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./src/index.js?v=8.0"></script>
+</body>
+</html>
